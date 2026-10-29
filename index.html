@@ -139,16 +139,17 @@
   .hero-visual { position: relative; }
   .hero-card { position: relative; border-radius: 24px; padding: 10px; background: #fff; box-shadow: var(--shadow-lg); }
   .hero-card .ba { border-radius: 16px; }
-  .hero-note { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; padding: 14px 8px 6px; font-size: .88rem; color: var(--mute); }
-  .hero-note small { font-size: .78rem; opacity: .85; padding-left: 24px; }
-  .hero-note b { color: var(--ink); font-weight: 700; }
-  .hero-note span { display: inline-flex; align-items: center; gap: 8px; }
-  .hero-note svg { width: 16px; height: 16px; color: var(--water); }
-  .hero-badge { position: absolute; right: 26px; bottom: -26px; display: flex; align-items: center; gap: 12px; padding: 12px 16px 12px 12px; border-radius: 16px; background: var(--ink); color: #fff; box-shadow: var(--shadow-lg); }
-  .hero-badge i { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: rgba(255, 255, 255, .1); }
-  .hero-badge svg { width: 22px; height: 22px; color: #7FD474; }
-  .hero-badge b { display: block; font: 800 1.05rem/1.1 var(--display); }
-  .hero-badge small { font-size: .78rem; opacity: .75; }
+  .hero-note { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 4px 2px 8px; font-size: .88rem; color: var(--mute); }
+  .hero-note-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; }
+  .hero-note-txt small { font-size: .78rem; opacity: .85; padding-left: 24px; }
+  .hero-note-txt b { color: var(--ink); font-weight: 700; }
+  .hero-note-txt span { display: inline-flex; align-items: center; gap: 8px; }
+  .hero-note-txt svg { width: 16px; height: 16px; color: var(--water); }
+  .hero-badge { display: flex; align-items: center; gap: 10px; padding: 8px 14px 8px 8px; border-radius: 12px; background: var(--ink); color: #fff; }
+  .hero-badge i { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: rgba(255, 255, 255, .1); }
+  .hero-badge svg { width: 18px; height: 18px; color: #7FD474; }
+  .hero-badge b { display: block; font: 800 .95rem/1.1 var(--display); color: #fff; }
+  .hero-badge small { display: block; font-size: .74rem; opacity: .75; }
   .wave { display: block; width: 100%; height: clamp(50px, 7vw, 110px); margin-top: clamp(48px, 6vw, 80px); }
 
   /* Before / after slider */
@@ -385,7 +386,6 @@
   @media (max-width: 920px) {
     .hero-grid, .finder, .calc, .about, .faq-grid, .contact { grid-template-columns: 1fr; }
     .pillars { grid-template-columns: 1fr; }
-    .hero-badge { position: relative; right: auto; bottom: auto; display: inline-flex; margin-top: 14px; }
     .hero-visual { margin-top: 12px; }
     .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
     .shot:last-child { grid-column: span 2; }
@@ -520,13 +520,15 @@
             <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Compare before and after: under-sink and toilet repair">
           </div>
           <div class="hero-note">
-            <span><svg><use href="#i-swipe"/></svg><b>Drag the handle</b>to compare</span>
-            <small>Illustrative example of a typical repair</small>
+            <div class="hero-note-txt">
+              <span><svg><use href="#i-swipe"/></svg><b>Drag the handle</b>to compare</span>
+              <small>Illustrative example of a typical repair</small>
+            </div>
+            <div class="hero-badge" aria-hidden="true">
+              <i><svg><use href="#i-drop"/></svg></i>
+              <span><b>4.8 L flush</b><small>vs. 13 L in older toilets</small></span>
+            </div>
           </div>
-        </div>
-        <div class="hero-badge" aria-hidden="true">
-          <i><svg><use href="#i-drop"/></svg></i>
-          <span><b>4.8 L flush</b><small>vs. 13 L in older toilets</small></span>
         </div>
       </div>
     </div>
